@@ -67,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,10 +169,11 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">DATA MINING IRIS</a></li>
+
+
+
 </ul>
 
     </div>
@@ -404,6 +406,14 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-modelling">DATA MODELLING</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-classification">Naive Bayes Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual">Perhitungan Manual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dengan-code">Dengan code</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -482,7 +492,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting mysql-connector-python
   Downloading mysql_connector_python-8.3.0-cp39-cp39-manylinux_2_17_x86_64.whl (21.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">21.5/21.5 MB</span> <span class=" -Color -Color-Red">51.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">21.5/21.5 MB</span> <span class=" -Color -Color-Red">55.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hInstalling collected packages: mysql-connector-python
 Successfully installed mysql-connector-python-8.3.0
 
@@ -524,7 +534,7 @@ Successfully installed mysql-connector-python-8.3.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_128/802532185.py:23: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_59/802532185.py:23: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
   df_1 = pd.read_sql(query, conn)
 </pre></div>
 </div>
@@ -677,7 +687,7 @@ Successfully installed mysql-connector-python-8.3.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_128/1299739618.py:22: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_59/1299739618.py:22: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
   df_2 = pd.read_sql(query, conn)
 </pre></div>
 </div>
@@ -2627,7 +2637,7 @@ Negative LOF scores: [1.02388584 1.22050401 0.95114439 1.0376618  0.95701983 1.2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_128/3799729213.py:34: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_59/3799729213.py:34: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
   df_end = pd.read_sql(query, conn)
 </pre></div>
 </div>
@@ -2804,6 +2814,460 @@ Negative LOF scores: [1.02388584 1.22050401 0.95114439 1.0376618  0.95701983 1.2
 </div>
 </div>
 <p>Berdasarkan visualisasi data yang diperoleh diatas menunjukkan bahwa terdapat outlier dengan warna merah, outlier ini terdapat pada SepalLengthCm yang berada pada sumbu x dan SepalWidthCm yang berada pada sumbu y, dapat disimpulkan bahwa outlier berada pada sumbu x memliki jarak yang sangat jauh dibandingkan dengan sumbu y</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-modelling">
+<h1>DATA MODELLING<a class="headerlink" href="#data-modelling" title="Permalink to this heading">#</a></h1>
+<section id="naive-bayes-classification">
+<h2>Naive Bayes Classification<a class="headerlink" href="#naive-bayes-classification" title="Permalink to this heading">#</a></h2>
+<p>Naive Bayes adalah salah satu algoritma dalam klasifikasi yang tidak boleh diabaikan karena karakteristik khususnya yaitu “naif”. Hal ini membuat asumsi bahwa fitur pengukuran tidak bergantung satu sama lain.</p>
+<p>Misalnya, suatu hewan dapat dianggap kucing jika ia memiliki mata kucing, kumis, dan ekor yang panjang. Sekalipun ciri-ciri ini bergantung satu sama lain atau pada keberadaan ciri-ciri lainnya, semua sifat ini secara independen berkontribusi pada kemungkinan bahwa hewan tersebut adalah kucing dan itulah sebabnya ia dikenal sebagai ‘Naif’.</p>
+<p>Menurut Teorema Bayes, berbagai fitur saling independen. Untuk dua kejadian bebas, P(A,B) = P(A)P(B). Asumsi Teorema Bayes ini mungkin tidak pernah ditemui dalam praktik, oleh karena itu asumsi ini merupakan bagian “naif” dalam Naive Bayes. Teorema Bayes dinyatakan sebagai: P(a|b) = (P(b|a) * P(a)) / P(b). Dimana P(a|b) adalah peluang terjadinya b.</p>
+<section id="perhitungan-manual">
+<h3>Perhitungan Manual<a class="headerlink" href="#perhitungan-manual" title="Permalink to this heading">#</a></h3>
+<p>untuk perhitungan manual data yang digunakan, pertama-tama yaitu menghapus 10 data paling atas pada masing-masing species. Setelah itu, mentrain sisanya, yaitu 80% dari datanya.</p>
+<p>Berikut Merupakan Data Yang akan digunakan :</p>
+<img src="untitled/tabel data.png" width="" align="" /><ul class="simple">
+<li><p>Mencari Nilai Rata-rata dan Standar Deviasi</p></li>
+</ul>
+<p>Berikut merupakan perhitungan yang sudah didapatkan</p>
+<img src="untitled/tabel mean dan std.png" width="" align="" /><p>pada data tersebut sudah memiliki nilai rata-rata serta standar deviasi dari setiap data tersebut, ketika sudah memiliki nilai-nilai tersebut maka langkah selanjutnya adalah menghitung menghitung probabilitas likelihood dan melakukan klasifikasi menggunakan Naive Bayes.</p>
+<ul class="simple">
+<li><p>Setelah itu mencari likelihood dengan rumus dibawah ini dan juga dengan data | x | 5 | 3 | 1 | 0.1 |</p></li>
+</ul>
+<img src="untitled/rumus likelihood.png" width="50%" align="" /><p>Dari kelas Iris-setosa :</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+\begin{aligned}
+\text{Sepal Length: } P(\text{{Sepal Length}} = 5 | \text{{Iris-setosa}}) &amp;= \frac{1}{\sqrt{2\pi(0.3555893)}} e^{(-\frac{(5 - 5.0425)^2}{2(0.3555893)})} \\ \\\end{split}\\\begin{split}\text{Sepal Width: } P(\text{{Sepal Width}} = 3 | \text{{Iris-setosa}}) &amp;= \frac{1}{\sqrt{2\pi(0.391120186)}} e^{(-\frac{(3 - 3.445)^2}{2(0.391120186)})} \\ \\\end{split}\\\begin{split}\text{Petal Length: } P(\text{{Petal Length}} = 1 | \text{{Iris-setosa}}) &amp;= \frac{1}{\sqrt{2\pi(0.184915521)}} e^{(-\frac{(1 - 1.4675)^2}{2(0.184915521)})} \\ \\\end{split}\\\text{Petal Width: } P(\text{{Petal Width}} = 0.1 | \text{{Iris-setosa}}) &amp;= \frac{1}{\sqrt{2\pi(0.111803399)}} e^{(-\frac{(0.1 - 0.25)^2}{2(0.111803399)})}
+\end{aligned}
+\end{aligned}\end{align} \]</div>
+<p>Dari kelas Iris-versicolor</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+\begin{aligned}
+\text{Sepal Length: } P(\text{{Sepal Length}} = 5 | \text{{Iris-versicolor}}) &amp;= \frac{1}{\sqrt{2\pi(0.446066139
+)}} e^{(-\frac{(5 - 5.895)^2}{2(0.446066139)})} \\ \\\end{split}\\\begin{split}\text{Sepal Width: } P(\text{{Sepal Width}} = 3 | \text{{Iris-versicolor}}) &amp;= \frac{1}{\sqrt{2\pi(0.302448343)}} e^{(-\frac{(3 - 2.745)^2}{2(0.302448343)})} \\ \\\end{split}\\\begin{split}\text{Petal Length: } P(\text{{Petal Length}} = 1 | \text{{Iris-versicolor}}) &amp;= \frac{1}{\sqrt{2\pi(0.461729087)}} e^{(-\frac{(1 - 4.2325)^2}{2(0.461729087)})} \\ \\\end{split}\\\text{Petal Width: } P(\text{{Petal Width}} = 0.1 | \text{{Iris-versicolor}}) &amp;= \frac{1}{\sqrt{2\pi(0.201478907)}} e^{(-\frac{(0.1 - 1.3125)^2}{2(0.201478907)})}
+\end{aligned}
+\end{aligned}\end{align} \]</div>
+<p>Dari kelas Iris-virginica</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+\begin{aligned}
+\text{Sepal Length: } P(\text{{Sepal Length}} = 5 | \text{{Iris-virginica}}) &amp;= \frac{1}{\sqrt{2\pi(0.591349093)}} e^{(-\frac{(5 - 6.5925)^2}{2(0.591349093)})} \\ \\\end{split}\\\begin{split}\text{Sepal Width: } P(\text{{Sepal Width}} = 3 | \text{{Iris-virginica}}) &amp;= \frac{1}{\sqrt{2\pi(0.318502355)}} e^{(-\frac{(3 - 2.9825)^2}{2(0.318502355)})} \\ \\\end{split}\\\begin{split}\text{Petal Length: } P(\text{{Petal Length}} = 1 | \text{{Iris-virginica}}) &amp;= \frac{1}{\sqrt{2\pi(0.52653941)}} e^{(-\frac{(1 - 5.4975)^2}{2(0.52653941)})} \\ \\\end{split}\\\text{Petal Width: } P(\text{{Petal Width}} = 0.1 | \text{{Iris-virginica}}) &amp;= \frac{1}{\sqrt{2\pi(0.270635825)}} e^{(-\frac{(0.1 - 2.0225)^2}{2(0.270635825)})}
+\end{aligned}
+\end{aligned}\end{align} \]</div>
+<p>dari perhitungan diatas nilai likelihood setiap species dapat disimpulkan sebagai berikut</p>
+<img src="untitled/tabel likelihood.png" width="" align="" /><ul class="simple">
+<li><p>Setelah itu menghitung probabilitas posterior dengan teorema bayes, berikut rumus teorema bayes :</p></li>
+</ul>
+<img src="untitled/rumus teorema bayes.png" width="50%" align="" /><p>Nilai-nilai likelihood yang sudah didapat diatas dapat kita gunakan untuk menentukan probabilitas posterior proposional</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+\begin{aligned}
+Probabilitas (Iris-setosa) = 1.119 \times 0.792 \times 1.194 \times 3.225 \approx 3.412 \\
+Probabilitas (Iris-versicolor) = 0.364 \times 1.256 \times 0.004 \times 0.001 \approx 0.000001 \\
+Probabilitas (Iris-virginica) = 0.009 \times 1.142 \times 0.00000000005 \times 0.000 \approx 0.00 \\\end{split}\\
+\end{aligned}
+\end{aligned}\end{align} \]</div>
+</section>
+<section id="dengan-code">
+<h3>Dengan code<a class="headerlink" href="#dengan-code" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Implementasi dengan python</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mk-gurucharan/Classification/master/IrisDataset.csv&#39;</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>bagi dataset menjaid 2 data yaitu training set dan test set</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penskalaan Fitur</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>setelah itu melatih model Klasifikasi Naive Bayes pada Set Pelatihan</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GaussianNB()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">GaussianNB</label><div class="sk-toggleable__content"><pre>GaussianNB()</pre></div></div></div></div></div></div></div>
+</div>
+<p>langkah selanjutnya yang dilakukan adalah Memprediksi hasil set Tes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> 
+<span class="n">y_pred</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;virginica&#39;,
+       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;,
+       &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
+       &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
+       &#39;virginica&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;], dtype=&#39;&lt;U10&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>confusion matrix and accuracy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Accuracy : &quot;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="n">cm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  1.0
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[10,  0,  0],
+       [ 0,  7,  0],
+       [ 0,  0, 13]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Membandingkan Nilai Riil dengan Nilai Prediksi</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_bayes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Real Values&#39;</span><span class="p">:</span><span class="n">y_test</span><span class="p">,</span> <span class="s1">&#39;Predicted Values&#39;</span><span class="p">:</span><span class="n">y_pred</span><span class="p">})</span>
+<span class="n">df_bayes</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Real Values</th>
+      <th>Predicted Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>setosa</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>setosa</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>setosa</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>setosa</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>setosa</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>setosa</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>setosa</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>setosa</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>setosa</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>setosa</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>virginica</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=fee8661d-3654-474c-b939-c19e7b08cbbd' target="_blank">
 <img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
 Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
@@ -2840,6 +3304,15 @@ Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></s
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -2888,6 +3361,14 @@ Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></s
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-manual-local-outlier-factor">Menghitung manual Local Outlier Factor</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-menggunakan-python">Menghitung menggunakan python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-pada-local-outlier-factor-pada-data-iris">Implementasi pada Local Outlier Factor pada data iris</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-modelling">DATA MODELLING</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-classification">Naive Bayes Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual">Perhitungan Manual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dengan-code">Dengan code</a></li>
 </ul>
 </li>
 </ul>
