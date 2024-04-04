@@ -2840,7 +2840,7 @@ Negative LOF scores: [1.02388584 1.22050401 0.95114439 1.0376618  0.95701983 1.2
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\begin{split}
 \begin{aligned}
-\text{Sepal Length: } P(\text{{Sepal Length}} = 5 | \text{{Iris-setosa}}) &amp;= \frac{1}{\sqrt{2\pi(0.3555893)}} e^{(-\frac{(5 - 5.0425)^2}{2(0.3555893)})} \\ \\\end{split}\\\begin{split}\text{Sepal Width: } P(\text{{Sepal Width}} = 3 | \text{{Iris-setosa}}) &amp;= \frac{1}{\sqrt{2\pi(0.391120186)}} e^{(-\frac{(3 - 3.445)^2}{2(0.391120186)})} \\ \\\end{split}\\\begin{split}\text{Petal Length: } P(\text{{Petal Length}} = 1 | \text{{Iris-setosa}}) &amp;= \frac{1}{\sqrt{2\pi(0.184915521)}} e^{(-\frac{(1 - 1.4675)^2}{2(0.184915521)})} \\ \\\end{split}\\\text{Petal Width: } P(\text{{Petal Width}} = 0.1 | \text{{Iris-setosa}}) &amp;= \frac{1}{\sqrt{2\pi(0.111803399)}} e^{(-\frac{(0.1 - 0.25)^2}{2(0.111803399)})}
+&amp;\text{Sepal Length: } P(\text{{Sepal Length}} = 5 | \text{{Iris-setosa}}) &amp;= \frac{1}{\sqrt{2\pi(0.3555893)}} e^{(-\frac{(5 - 5.0425)^2}{2(0.3555893)})} \\ \\\end{split}\\\begin{split}&amp;\text{Sepal Width: } P(\text{{Sepal Width}} = 3 | \text{{Iris-setosa}}) &amp;= \frac{1}{\sqrt{2\pi(0.391120186)}} e^{(-\frac{(3 - 3.445)^2}{2(0.391120186)})} \\ \\\end{split}\\\begin{split}&amp;\text{Petal Length: } P(\text{{Petal Length}} = 1 | \text{{Iris-setosa}}) &amp;= \frac{1}{\sqrt{2\pi(0.184915521)}} e^{(-\frac{(1 - 1.4675)^2}{2(0.184915521)})} \\ \\\end{split}\\&amp;\text{Petal Width: } P(\text{{Petal Width}} = 0.1 | \text{{Iris-setosa}}) &amp;= \frac{1}{\sqrt{2\pi(0.111803399)}} e^{(-\frac{(0.1 - 0.25)^2}{2(0.111803399)})}
 \end{aligned}
 \end{aligned}\end{align} \]</div>
 <p>Dari kelas Iris-versicolor</p>
@@ -2855,7 +2855,7 @@ Negative LOF scores: [1.02388584 1.22050401 0.95114439 1.0376618  0.95701983 1.2
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\begin{split}
 \begin{aligned}
-\text{Sepal Length: } P(\text{{Sepal Length}} = 5 | \text{{Iris-virginica}}) &amp;= \frac{1}{\sqrt{2\pi(0.591349093)}} e^{(-\frac{(5 - 6.5925)^2}{2(0.591349093)})} \\ \\\end{split}\\\begin{split}\text{Sepal Width: } P(\text{{Sepal Width}} = 3 | \text{{Iris-virginica}}) &amp;= \frac{1}{\sqrt{2\pi(0.318502355)}} e^{(-\frac{(3 - 2.9825)^2}{2(0.318502355)})} \\ \\\end{split}\\\begin{split}\text{Petal Length: } P(\text{{Petal Length}} = 1 | \text{{Iris-virginica}}) &amp;= \frac{1}{\sqrt{2\pi(0.52653941)}} e^{(-\frac{(1 - 5.4975)^2}{2(0.52653941)})} \\ \\\end{split}\\\text{Petal Width: } P(\text{{Petal Width}} = 0.1 | \text{{Iris-virginica}}) &amp;= \frac{1}{\sqrt{2\pi(0.270635825)}} e^{(-\frac{(0.1 - 2.0225)^2}{2(0.270635825)})}
+&amp;\text{Sepal Length: } P(\text{{Sepal Length}} = 5 | \text{{Iris-virginica}}) &amp;= \frac{1}{\sqrt{2\pi(0.591349093)}} e^{(-\frac{(5 - 6.5925)^2}{2(0.591349093)})} \\ \\\end{split}\\\begin{split}&amp;\text{Sepal Width: } P(\text{{Sepal Width}} = 3 | \text{{Iris-virginica}}) &amp;= \frac{1}{\sqrt{2\pi(0.318502355)}} e^{(-\frac{(3 - 2.9825)^2}{2(0.318502355)})} \\ \\\end{split}\\\begin{split}&amp;\text{Petal Length: } P(\text{{Petal Length}} = 1 | \text{{Iris-virginica}}) &amp;= \frac{1}{\sqrt{2\pi(0.52653941)}} e^{(-\frac{(1 - 5.4975)^2}{2(0.52653941)})} \\ \\\end{split}\\&amp;\text{Petal Width: } P(\text{{Petal Width}} = 0.1 | \text{{Iris-virginica}}) &amp;= \frac{1}{\sqrt{2\pi(0.270635825)}} e^{(-\frac{(0.1 - 2.0225)^2}{2(0.270635825)})}
 \end{aligned}
 \end{aligned}\end{align} \]</div>
 <p>dari perhitungan diatas nilai likelihood setiap species dapat disimpulkan sebagai berikut</p>
@@ -2866,9 +2866,9 @@ Negative LOF scores: [1.02388584 1.22050401 0.95114439 1.0376618  0.95701983 1.2
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\begin{split}
 \begin{aligned}
-Probabilitas (Iris-setosa) = 1.119 \times 0.792 \times 1.194 \times 3.225 \approx 3.412 \\
-Probabilitas (Iris-versicolor) = 0.364 \times 1.256 \times 0.004 \times 0.001 \approx 0.000001 \\
-Probabilitas (Iris-virginica) = 0.009 \times 1.142 \times 0.00000000005 \times 0.000 \approx 0.00 \\\end{split}\\
+&amp;Probabilitas (Iris-setosa) = 1.119 \times 0.792 \times 1.194 \times 3.225 \approx 3.412 \\
+&amp;Probabilitas (Iris-versicolor) = 0.364 \times 1.256 \times 0.004 \times 0.001 \approx 0.000001 \\
+&amp;Probabilitas (Iris-virginica) = 0.009 \times 1.142 \times 0.00000000005 \times 0.000 \approx 0.00 \\\end{split}\\
 \end{aligned}
 \end{aligned}\end{align} \]</div>
 </section>
