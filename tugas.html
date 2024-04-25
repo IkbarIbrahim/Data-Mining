@@ -408,7 +408,8 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-modelling">DATA MODELLING</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-classification">Naive Bayes Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual">Perhitungan Manual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-dengan-mengambil-data-acak">Perhitungan Manual dengan mengambil data acak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-dengan-mengambil-10-data-pertama">perhitungan manual dengan mengambil 10 data pertama</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dengan-code">Dengan code</a></li>
 </ul>
 </li>
@@ -492,7 +493,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting mysql-connector-python
   Downloading mysql_connector_python-8.3.0-cp39-cp39-manylinux_2_17_x86_64.whl (21.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">21.5/21.5 MB</span> <span class=" -Color -Color-Red">38.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">21.5/21.5 MB</span> <span class=" -Color -Color-Red">33.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hInstalling collected packages: mysql-connector-python
 Successfully installed mysql-connector-python-8.3.0
 
@@ -534,7 +535,7 @@ Successfully installed mysql-connector-python-8.3.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_74/802532185.py:23: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_62/802532185.py:23: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
   df_1 = pd.read_sql(query, conn)
 </pre></div>
 </div>
@@ -687,7 +688,7 @@ Successfully installed mysql-connector-python-8.3.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_74/1299739618.py:22: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_62/1299739618.py:22: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
   df_2 = pd.read_sql(query, conn)
 </pre></div>
 </div>
@@ -2637,7 +2638,7 @@ Negative LOF scores: [1.02388584 1.22050401 0.95114439 1.0376618  0.95701983 1.2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_74/3799729213.py:34: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_62/3799729213.py:34: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
   df_end = pd.read_sql(query, conn)
 </pre></div>
 </div>
@@ -2824,10 +2825,1326 @@ Negative LOF scores: [1.02388584 1.22050401 0.95114439 1.0376618  0.95701983 1.2
 <p>Naive Bayes adalah salah satu algoritma dalam klasifikasi yang tidak boleh diabaikan karena karakteristik khususnya yaitu “naif”. Hal ini membuat asumsi bahwa fitur pengukuran tidak bergantung satu sama lain.</p>
 <p>Misalnya, suatu hewan dapat dianggap kucing jika ia memiliki mata kucing, kumis, dan ekor yang panjang. Sekalipun ciri-ciri ini bergantung satu sama lain atau pada keberadaan ciri-ciri lainnya, semua sifat ini secara independen berkontribusi pada kemungkinan bahwa hewan tersebut adalah kucing dan itulah sebabnya ia dikenal sebagai ‘Naif’.</p>
 <p>Menurut Teorema Bayes, berbagai fitur saling independen. Untuk dua kejadian bebas, P(A,B) = P(A)P(B). Asumsi Teorema Bayes ini mungkin tidak pernah ditemui dalam praktik, oleh karena itu asumsi ini merupakan bagian “naif” dalam Naive Bayes. Teorema Bayes dinyatakan sebagai: P(a|b) = (P(b|a) * P(a)) / P(b). Dimana P(a|b) adalah peluang terjadinya b.</p>
-<section id="perhitungan-manual">
-<h3>Perhitungan Manual<a class="headerlink" href="#perhitungan-manual" title="Permalink to this heading">#</a></h3>
+<section id="perhitungan-manual-dengan-mengambil-data-acak">
+<h3>Perhitungan Manual dengan mengambil data acak<a class="headerlink" href="#perhitungan-manual-dengan-mengambil-data-acak" title="Permalink to this heading">#</a></h3>
 <p>untuk perhitungan manual data yang digunakan, pertama-tama yaitu menghapus 10 data paling atas pada masing-masing species. Setelah itu, mentrain sisanya, yaitu 80% dari datanya.</p>
-<p>Berikut Merupakan Data Yang akan digunakan :</p>
+<ul class="simple">
+<li><p>ambil data random dari iris untuk data dari setiap spesies</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # import pandas as pd</span>
+<span class="c1"># from sklearn.model_selection import train_test_split</span>
+
+<span class="c1"># # Load dataset</span>
+<span class="c1"># dataset = pd.read_csv(&#39;https://raw.githubusercontent.com/mk-gurucharan/Classification/master/IrisDataset.csv&#39;)</span>
+
+<span class="c1"># # Membagi data menjadi data latih dan data uji</span>
+<span class="c1"># X_train, X_test, y_train, y_test = train_test_split(dataset.drop(columns=[&#39;species&#39;]), dataset[&#39;species&#39;], test_size=0.2)</span>
+
+<span class="c1"># # Membuat DataFrame dari X_train dan y_train</span>
+<span class="c1"># train_df = X_train.copy()</span>
+<span class="c1"># train_df[&#39;species&#39;] = y_train</span>
+
+<span class="c1"># # Menyimpan DataFrame ke dalam file CSV untuk setiap spesies</span>
+<span class="c1"># for species in train_df[&#39;species&#39;].unique():</span>
+<span class="c1">#     species_train_df = train_df[train_df[&#39;species&#39;] == species]</span>
+<span class="c1">#     species_train_df.to_csv(f&#39;iris_train_data_{species}.csv&#39;, index=False)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>setelah menghilangkan 20% dari data 80% sisanya kita train</p></li>
+</ul>
+<p>berikut adalah data iris-setosa</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Baca data dari file CSV</span>
+<span class="n">df_Isetosa</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;iris_train_data_setosa.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df_Isetosa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.4</td>
+      <td>3.4</td>
+      <td>1.7</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.4</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5.5</td>
+      <td>4.2</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5.2</td>
+      <td>3.5</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>1.7</td>
+      <td>0.4</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4.4</td>
+      <td>2.9</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5.0</td>
+      <td>3.3</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4.8</td>
+      <td>3.1</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>5.4</td>
+      <td>3.4</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>5.0</td>
+      <td>3.2</td>
+      <td>1.2</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>5.0</td>
+      <td>3.5</td>
+      <td>1.6</td>
+      <td>0.6</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>5.1</td>
+      <td>3.4</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.3</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>4.8</td>
+      <td>3.4</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>4.6</td>
+      <td>3.4</td>
+      <td>1.4</td>
+      <td>0.3</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>4.5</td>
+      <td>2.3</td>
+      <td>1.3</td>
+      <td>0.3</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>5.7</td>
+      <td>4.4</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>1.3</td>
+      <td>0.4</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>4.9</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.1</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>5.3</td>
+      <td>3.7</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>4.6</td>
+      <td>3.2</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>4.6</td>
+      <td>3.6</td>
+      <td>1.0</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>5.1</td>
+      <td>3.8</td>
+      <td>1.9</td>
+      <td>0.4</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>4.3</td>
+      <td>3.0</td>
+      <td>1.1</td>
+      <td>0.1</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>5.5</td>
+      <td>3.5</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>5.1</td>
+      <td>3.3</td>
+      <td>1.7</td>
+      <td>0.5</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>4.9</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.1</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>4.4</td>
+      <td>3.0</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.1</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>5.0</td>
+      <td>3.5</td>
+      <td>1.3</td>
+      <td>0.3</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>4.8</td>
+      <td>3.4</td>
+      <td>1.9</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>mencari std dan rata-rata dari iris-setosa</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_Isetosa_numeric</span> <span class="o">=</span> <span class="n">df_Isetosa</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">])</span>
+
+<span class="c1"># Menghitung rata-rata untuk setiap fitur</span>
+<span class="n">mean_values</span> <span class="o">=</span> <span class="n">df_Isetosa_numeric</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># Menghitung standar deviasi untuk setiap fitur</span>
+<span class="n">std_deviation_values</span> <span class="o">=</span> <span class="n">df_Isetosa_numeric</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">mean_values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">std_deviation_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sepal_length    4.944737
+sepal_width     3.365789
+petal_length    1.457895
+petal_width     0.250000
+dtype: float64
+sepal_length    0.350827
+sepal_width     0.382224
+petal_length    0.186912
+petal_width     0.113304
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>lalu untuk data iris-versicolor</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_Iversicolor</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;iris_train_data_versicolor.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df_Iversicolor</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6.1</td>
+      <td>2.8</td>
+      <td>4.7</td>
+      <td>1.2</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5.7</td>
+      <td>2.6</td>
+      <td>3.5</td>
+      <td>1.0</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6.3</td>
+      <td>3.3</td>
+      <td>4.7</td>
+      <td>1.6</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5.2</td>
+      <td>2.7</td>
+      <td>3.9</td>
+      <td>1.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>1.7</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6.7</td>
+      <td>3.1</td>
+      <td>4.7</td>
+      <td>1.5</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6.9</td>
+      <td>3.1</td>
+      <td>4.9</td>
+      <td>1.5</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>5.6</td>
+      <td>2.7</td>
+      <td>4.2</td>
+      <td>1.3</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>5.6</td>
+      <td>3.0</td>
+      <td>4.5</td>
+      <td>1.5</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6.1</td>
+      <td>2.9</td>
+      <td>4.7</td>
+      <td>1.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>6.5</td>
+      <td>2.8</td>
+      <td>4.6</td>
+      <td>1.5</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>6.0</td>
+      <td>3.4</td>
+      <td>4.5</td>
+      <td>1.6</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>4.2</td>
+      <td>1.5</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>6.7</td>
+      <td>3.1</td>
+      <td>4.4</td>
+      <td>1.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>6.1</td>
+      <td>2.8</td>
+      <td>4.0</td>
+      <td>1.3</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>5.6</td>
+      <td>2.5</td>
+      <td>3.9</td>
+      <td>1.1</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>5.6</td>
+      <td>3.0</td>
+      <td>4.1</td>
+      <td>1.3</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>5.7</td>
+      <td>2.9</td>
+      <td>4.2</td>
+      <td>1.3</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>5.7</td>
+      <td>3.0</td>
+      <td>4.2</td>
+      <td>1.2</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>5.0</td>
+      <td>2.3</td>
+      <td>3.3</td>
+      <td>1.0</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>6.0</td>
+      <td>2.7</td>
+      <td>5.1</td>
+      <td>1.6</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>6.3</td>
+      <td>2.3</td>
+      <td>4.4</td>
+      <td>1.3</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>6.0</td>
+      <td>2.2</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>5.5</td>
+      <td>2.3</td>
+      <td>4.0</td>
+      <td>1.3</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>5.7</td>
+      <td>2.8</td>
+      <td>4.1</td>
+      <td>1.3</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>6.8</td>
+      <td>2.8</td>
+      <td>4.8</td>
+      <td>1.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>6.1</td>
+      <td>3.0</td>
+      <td>4.6</td>
+      <td>1.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>4.9</td>
+      <td>2.4</td>
+      <td>3.3</td>
+      <td>1.0</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>5.9</td>
+      <td>3.2</td>
+      <td>4.8</td>
+      <td>1.8</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>4.9</td>
+      <td>1.5</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>6.4</td>
+      <td>2.9</td>
+      <td>4.3</td>
+      <td>1.3</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>5.5</td>
+      <td>2.5</td>
+      <td>4.0</td>
+      <td>1.3</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>5.8</td>
+      <td>2.7</td>
+      <td>4.1</td>
+      <td>1.0</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>5.4</td>
+      <td>3.0</td>
+      <td>4.5</td>
+      <td>1.5</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>5.8</td>
+      <td>2.6</td>
+      <td>4.0</td>
+      <td>1.2</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>5.1</td>
+      <td>2.5</td>
+      <td>3.0</td>
+      <td>1.1</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>3.5</td>
+      <td>1.0</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>7.0</td>
+      <td>3.2</td>
+      <td>4.7</td>
+      <td>1.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>5.8</td>
+      <td>2.7</td>
+      <td>3.9</td>
+      <td>1.2</td>
+      <td>versicolor</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>mencari std dan rata-rata dari iris-versicolor</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghapus kolom &#39;species&#39;</span>
+<span class="n">df_versicolor_numeric</span> <span class="o">=</span> <span class="n">df_Iversicolor</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">])</span>
+
+<span class="c1"># Menghitung rata-rata untuk setiap fitur</span>
+<span class="n">mean_values</span> <span class="o">=</span> <span class="n">df_versicolor_numeric</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># Menghitung standar deviasi untuk setiap fitur</span>
+<span class="n">std_deviation_values</span> <span class="o">=</span> <span class="n">df_versicolor_numeric</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">mean_values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">std_deviation_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sepal_length    5.923077
+sepal_width     2.776923
+petal_length    4.261538
+petal_width     1.330769
+dtype: float64
+sepal_length    0.539718
+sepal_width     0.319919
+petal_length    0.499271
+petal_width     0.207940
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>lalu untuk data iris-virginica</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_Ivirginica</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;iris_train_data_virginica.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df_Ivirginica</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6.4</td>
+      <td>3.2</td>
+      <td>5.3</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.9</td>
+      <td>3.2</td>
+      <td>5.7</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7.7</td>
+      <td>2.8</td>
+      <td>6.7</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6.7</td>
+      <td>3.1</td>
+      <td>5.6</td>
+      <td>2.4</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6.4</td>
+      <td>3.1</td>
+      <td>5.5</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>7.2</td>
+      <td>3.6</td>
+      <td>6.1</td>
+      <td>2.5</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6.8</td>
+      <td>3.0</td>
+      <td>5.5</td>
+      <td>2.1</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>6.8</td>
+      <td>3.2</td>
+      <td>5.9</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>4.8</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7.7</td>
+      <td>3.8</td>
+      <td>6.7</td>
+      <td>2.2</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>6.4</td>
+      <td>2.7</td>
+      <td>5.3</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>6.9</td>
+      <td>3.1</td>
+      <td>5.4</td>
+      <td>2.1</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>6.1</td>
+      <td>3.0</td>
+      <td>4.9</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>5.8</td>
+      <td>2.8</td>
+      <td>5.1</td>
+      <td>2.4</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>7.4</td>
+      <td>2.8</td>
+      <td>6.1</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>7.2</td>
+      <td>3.0</td>
+      <td>5.8</td>
+      <td>1.6</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>6.3</td>
+      <td>2.7</td>
+      <td>4.9</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.8</td>
+      <td>2.2</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>6.7</td>
+      <td>3.3</td>
+      <td>5.7</td>
+      <td>2.1</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>5.8</td>
+      <td>2.7</td>
+      <td>5.1</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>7.3</td>
+      <td>2.9</td>
+      <td>6.3</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>6.2</td>
+      <td>2.8</td>
+      <td>4.8</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>6.3</td>
+      <td>2.8</td>
+      <td>5.1</td>
+      <td>1.5</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>4.9</td>
+      <td>2.5</td>
+      <td>4.5</td>
+      <td>1.7</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>6.0</td>
+      <td>2.2</td>
+      <td>5.0</td>
+      <td>1.5</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>7.2</td>
+      <td>3.2</td>
+      <td>6.0</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>5.7</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>7.9</td>
+      <td>3.8</td>
+      <td>6.4</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>6.3</td>
+      <td>3.3</td>
+      <td>6.0</td>
+      <td>2.5</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>6.4</td>
+      <td>2.8</td>
+      <td>5.6</td>
+      <td>2.2</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>6.3</td>
+      <td>3.4</td>
+      <td>5.6</td>
+      <td>2.4</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>5.8</td>
+      <td>2.7</td>
+      <td>5.1</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>6.1</td>
+      <td>2.6</td>
+      <td>5.6</td>
+      <td>1.4</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>5.6</td>
+      <td>2.8</td>
+      <td>4.9</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>6.3</td>
+      <td>2.9</td>
+      <td>5.6</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.5</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>7.6</td>
+      <td>3.0</td>
+      <td>6.6</td>
+      <td>2.1</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>6.7</td>
+      <td>2.5</td>
+      <td>5.8</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>6.9</td>
+      <td>3.1</td>
+      <td>5.1</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>mencari std dan rata-rata dari iris-virginica</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghapus kolom &#39;species&#39;</span>
+<span class="n">df_virginica_numeric</span> <span class="o">=</span> <span class="n">df_Ivirginica</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">])</span>
+
+<span class="c1"># Menghitung rata-rata untuk setiap fitur</span>
+<span class="n">mean_values</span> <span class="o">=</span> <span class="n">df_virginica_numeric</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># Menghitung standar deviasi untuk setiap fitur</span>
+<span class="n">std_deviation_values</span> <span class="o">=</span> <span class="n">df_virginica_numeric</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">mean_values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">std_deviation_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sepal_length    6.525581
+sepal_width     2.972093
+petal_length    5.513953
+petal_width     1.993023
+dtype: float64
+sepal_length    0.633243
+sepal_width     0.336880
+petal_length    0.540538
+petal_width     0.275504
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>selanjutnya untuk probabilitas prior datanya</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jumlah_baris</span> <span class="o">=</span> <span class="n">df_Isetosa</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;jumlah :&quot;</span><span class="p">,</span> <span class="n">jumlah_baris</span><span class="p">)</span>
+
+<span class="n">jumlah_baris</span> <span class="o">=</span> <span class="n">df_Ivirginica</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;jumlah :&quot;</span><span class="p">,</span> <span class="n">jumlah_baris</span><span class="p">)</span>
+
+<span class="n">jumlah_baris</span> <span class="o">=</span> <span class="n">df_Iversicolor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;jumlah :&quot;</span><span class="p">,</span> <span class="n">jumlah_baris</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jumlah : 38
+jumlah : 43
+jumlah : 39
+</pre></div>
+</div>
+</div>
+</div>
+<p>dari hasil diatas didapat probabilitas prior dari masing-masing spesies adalah 38/120 untuk iris-setosa, 43/120 untuk iris-versicolor dan 39/120 untuk iris-virginica</p>
+<ul class="simple">
+<li><p>setelah itu mencari likelihood dari masing-masing data species dengan menggunakan data test(SepalLengthCm=5.1, SepalWidthCm=3.5,PetalLengthCm=1.4,PetalWidthCm=0.2)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Data uji</span>
+<span class="n">x_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.1</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
+
+<span class="c1"># Mean dan standar deviasi untuk setiap kelas</span>
+<span class="n">means_setosa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.0350</span><span class="p">,</span> <span class="mf">3.4550</span><span class="p">,</span> <span class="mf">1.4575</span><span class="p">,</span> <span class="mf">0.2325</span><span class="p">])</span>
+<span class="n">std_devs_setosa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.351225</span><span class="p">,</span> <span class="mf">0.339645</span><span class="p">,</span> <span class="mf">0.179583</span><span class="p">,</span> <span class="mf">0.097106</span><span class="p">])</span>
+
+<span class="n">means_versicolor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">6.002326</span><span class="p">,</span> <span class="mf">2.811628</span><span class="p">,</span> <span class="mf">4.337209</span><span class="p">,</span> <span class="mf">1.355814</span><span class="p">])</span>
+<span class="n">std_devs_versicolor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.464701</span><span class="p">,</span> <span class="mf">0.288848</span><span class="p">,</span> <span class="mf">0.410008</span><span class="p">,</span> <span class="mf">0.180347</span><span class="p">])</span>
+
+<span class="n">means_virginica</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">6.521622</span><span class="p">,</span> <span class="mf">2.962162</span><span class="p">,</span> <span class="mf">5.483784</span><span class="p">,</span> <span class="mf">2.021622</span><span class="p">])</span>
+<span class="n">std_devs_virginica</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.588376</span><span class="p">,</span> <span class="mf">0.335287</span><span class="p">,</span> <span class="mf">0.480459</span><span class="p">,</span> <span class="mf">0.276018</span><span class="p">])</span>
+
+<span class="c1"># Fungsi untuk menghitung likelihood</span>
+<span class="k">def</span> <span class="nf">calculate_likelihood</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std_dev</span><span class="p">):</span>
+    <span class="n">exponent</span> <span class="o">=</span> <span class="o">-</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">std_dev</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">likelihood</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">std_dev</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">exponent</span><span class="p">))</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">likelihood</span>
+
+<span class="c1"># Menghitung likelihood untuk setiap kelas</span>
+<span class="n">likelihood_setosa</span> <span class="o">=</span> <span class="p">[</span><span class="n">calculate_likelihood</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std_dev</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std_dev</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">means_setosa</span><span class="p">,</span> <span class="n">std_devs_setosa</span><span class="p">)]</span>
+<span class="n">likelihood_versicolor</span> <span class="o">=</span> <span class="p">[</span><span class="n">calculate_likelihood</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std_dev</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std_dev</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">means_versicolor</span><span class="p">,</span> <span class="n">std_devs_versicolor</span><span class="p">)]</span>
+<span class="n">likelihood_virginica</span> <span class="o">=</span> <span class="p">[</span><span class="n">calculate_likelihood</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std_dev</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std_dev</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">means_virginica</span><span class="p">,</span> <span class="n">std_devs_virginica</span><span class="p">)]</span>
+
+<span class="c1"># Menampilkan hasil perhitungan likelihood</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Likelihood untuk Setosa:&quot;</span><span class="p">,</span> <span class="n">likelihood_setosa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Likelihood untuk Versicolor:&quot;</span><span class="p">,</span> <span class="n">likelihood_versicolor</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Likelihood untuk Virginica:&quot;</span><span class="p">,</span> <span class="n">likelihood_virginica</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Likelihood untuk Setosa: [1.11657, 1.16432, 2.11049, 3.88455]
+Likelihood untuk Versicolor: [0.13032, 0.08072, 0.0, 0.0]
+Likelihood untuk Virginica: [0.03661, 0.32865, 0.0, 0.0]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>setelah itu Menghitung Probabilitas Posterior menggunakan Teorema Bayes:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Likelihood hasil perhitungan sebelumnya</span>
+<span class="n">likelihood_setosa</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.11657</span><span class="p">,</span> <span class="mf">1.16432</span><span class="p">,</span> <span class="mf">2.11049</span><span class="p">,</span> <span class="mf">3.88455</span><span class="p">]</span>
+<span class="n">likelihood_versicolor</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.13032</span><span class="p">,</span> <span class="mf">0.08072</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">likelihood_virginica</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.03661</span><span class="p">,</span> <span class="mf">0.32865</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+
+<span class="c1"># Prior probability dari setiap kelas</span>
+<span class="n">prior_setosa</span> <span class="o">=</span> <span class="mi">38</span> <span class="o">/</span> <span class="mi">120</span>
+<span class="n">prior_versicolor</span> <span class="o">=</span> <span class="mi">43</span> <span class="o">/</span> <span class="mi">120</span>
+<span class="n">prior_virginica</span> <span class="o">=</span> <span class="mi">39</span> <span class="o">/</span> <span class="mi">120</span>
+
+<span class="c1"># Menghitung P(x) sebagai faktor normalisasi</span>
+<span class="n">p_x</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">likelihood_setosa</span><span class="p">)</span> <span class="o">*</span> <span class="n">prior_setosa</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">likelihood_versicolor</span><span class="p">)</span> <span class="o">*</span> <span class="n">prior_versicolor</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">likelihood_virginica</span><span class="p">)</span> <span class="o">*</span> <span class="n">prior_virginica</span>
+
+<span class="c1"># Menghitung posterior probability untuk setiap kelas dan membulatkannya ke lima angka desimal</span>
+<span class="n">posterior_setosa</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">((</span><span class="n">likelihood_setosa</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">prior_setosa</span><span class="p">)</span> <span class="o">/</span> <span class="n">p_x</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">likelihood_setosa</span><span class="p">))]</span>
+<span class="n">posterior_versicolor</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">((</span><span class="n">likelihood_versicolor</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">prior_versicolor</span><span class="p">)</span> <span class="o">/</span> <span class="n">p_x</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">likelihood_versicolor</span><span class="p">))]</span>
+<span class="n">posterior_virginica</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">((</span><span class="n">likelihood_virginica</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">prior_virginica</span><span class="p">)</span> <span class="o">/</span> <span class="n">p_x</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">likelihood_virginica</span><span class="p">))]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Posterior probability untuk Setosa:&quot;</span><span class="p">,</span> <span class="n">posterior_setosa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Posterior probability untuk Versicolor:&quot;</span><span class="p">,</span> <span class="n">posterior_versicolor</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Posterior probability untuk Virginica:&quot;</span><span class="p">,</span> <span class="n">posterior_virginica</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Posterior probability untuk Setosa: [0.1256039279, 0.1309753669, 0.237410851, 0.4369763994]
+Posterior probability untuk Versicolor: [0.0165887322, 0.0102750343, 0.0, 0.0]
+Posterior probability untuk Virginica: [0.0042266667, 0.0379430216, 0.0, 0.0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Karena probabilitas total tertinggi adalah untuk kelas Iris-setosa, maka prediksi untuk data uji ini adalah Iris-setosa</p>
+</section>
+<section id="perhitungan-manual-dengan-mengambil-10-data-pertama">
+<h3>perhitungan manual dengan mengambil 10 data pertama<a class="headerlink" href="#perhitungan-manual-dengan-mengambil-10-data-pertama" title="Permalink to this heading">#</a></h3>
 <img src="untitled/tabel data.png" width="" align="" /><ul class="simple">
 <li><p>Mencari probabilitas Prior</p></li>
 </ul>
@@ -2883,15 +4200,32 @@ Negative LOF scores: [1.02388584 1.22050401 0.95114439 1.0376618  0.95701983 1.2
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mk-gurucharan/Classification/master/IrisDataset.csv&#39;</span><span class="p">)</span>
-<span class="n">dataset</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hostname</span> <span class="o">=</span> <span class="s1">&#39;mysql-3832c5d5-ikbar21116.a.aivencloud.com&#39;</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">28482</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;avnadmin&#39;</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;AVNS_mwAH3wybkSrDiGU5knO&#39;</span>
+<span class="n">database</span> <span class="o">=</span> <span class="s1">&#39;defaultdb&#39;</span>
+
+<span class="c1"># Membuat koneksi ke database MySQL</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="n">hostname</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="n">username</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="n">database</span>
+<span class="p">)</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM iris_gnb&quot;</span>
+<span class="n">df_gnb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">df_gnb</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_62/2245686805.py:18: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df_gnb = pd.read_sql(query, conn)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2910,53 +4244,59 @@ Negative LOF scores: [1.02388584 1.22050401 0.95114439 1.0376618  0.95701983 1.2
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>sepal_length</th>
-      <th>sepal_width</th>
-      <th>petal_length</th>
-      <th>petal_width</th>
-      <th>species</th>
+      <th>Id</th>
+      <th>SepalLengthCm</th>
+      <th>SepalWidthCm</th>
+      <th>PetalLengthCm</th>
+      <th>PetalWidthCm</th>
+      <th>Species</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
+      <td>1</td>
       <td>5.1</td>
       <td>3.5</td>
       <td>1.4</td>
       <td>0.2</td>
-      <td>setosa</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>2</td>
       <td>4.9</td>
       <td>3.0</td>
       <td>1.4</td>
       <td>0.2</td>
-      <td>setosa</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>3</td>
       <td>4.7</td>
       <td>3.2</td>
       <td>1.3</td>
       <td>0.2</td>
-      <td>setosa</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>3</th>
+      <td>4</td>
       <td>4.6</td>
       <td>3.1</td>
       <td>1.5</td>
       <td>0.2</td>
-      <td>setosa</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>4</th>
+      <td>5</td>
       <td>5.0</td>
       <td>3.6</td>
       <td>1.4</td>
       <td>0.2</td>
-      <td>setosa</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>...</th>
@@ -2965,57 +4305,63 @@ Negative LOF scores: [1.02388584 1.22050401 0.95114439 1.0376618  0.95701983 1.2
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>145</th>
+      <td>146</td>
       <td>6.7</td>
       <td>3.0</td>
       <td>5.2</td>
       <td>2.3</td>
-      <td>virginica</td>
+      <td>Iris-virginica</td>
     </tr>
     <tr>
       <th>146</th>
+      <td>147</td>
       <td>6.3</td>
       <td>2.5</td>
       <td>5.0</td>
       <td>1.9</td>
-      <td>virginica</td>
+      <td>Iris-virginica</td>
     </tr>
     <tr>
       <th>147</th>
+      <td>148</td>
       <td>6.5</td>
       <td>3.0</td>
       <td>5.2</td>
       <td>2.0</td>
-      <td>virginica</td>
+      <td>Iris-virginica</td>
     </tr>
     <tr>
       <th>148</th>
+      <td>149</td>
       <td>6.2</td>
       <td>3.4</td>
       <td>5.4</td>
       <td>2.3</td>
-      <td>virginica</td>
+      <td>Iris-virginica</td>
     </tr>
     <tr>
       <th>149</th>
+      <td>150</td>
       <td>5.9</td>
       <td>3.0</td>
       <td>5.1</td>
       <td>1.8</td>
-      <td>virginica</td>
+      <td>Iris-virginica</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 5 columns</p>
+<p>150 rows × 6 columns</p>
 </div></div></div>
 </div>
 <p>fitur-fitur yang digunakan untuk klasifikasi (sepal_length, sepal_width, petal_length, petal_width) akan ditaruh ke dalam variabel x dan species pada variabel y</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[[</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;sepal_width&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_width&#39;</span> <span class="p">]]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df_gnb</span><span class="p">[[</span><span class="s1">&#39;SepalLengthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;SepalWidthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;PetalLengthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;PetalWidthCm&#39;</span> <span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df_gnb</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -3047,20 +4393,20 @@ Negative LOF scores: [1.02388584 1.22050401 0.95114439 1.0376618  0.95701983 1.2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy:  1.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy:  0.9
 </pre></div>
 </div>
 </div>
 </div>
-<p>setelah model gnb berhasil dibuat dan menunjukkan hasil akurasinya yaitu 1.0 yang menunjukkan bahwa mode yang dibangun baik, selanutnya adalah menguji model tersebut untuk memprediksi spesies dari data yang telah dimasukkan berikut, untuk datanya yaitu (sepalLengthCm=5, sepalWidthCm=3, petalLengthCm=1, pelaWidthCm=0.1)</p>
+<p>setelah model gnb berhasil dibuat dan menunjukkan hasil akurasinya yaitu 1.0 yang menunjukkan bahwa mode yang dibangun baik, selanutnya adalah menguji model tersebut untuk memprediksi spesies dari data yang telah dimasukkan berikut, untuk datanya yaitu (sepalLengthCm=5.1, sepalWidthCm=3.5, petalLengthCm=1.4, petalWidthCm=0.2)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]]))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mf">5.1</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;setosa&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Iris-setosa&#39;]
 /shared-libs/python3.9/py/lib/python3.9/site-packages/sklearn/base.py:450: UserWarning: X does not have valid feature names, but GaussianNB was fitted with feature names
   warnings.warn(
 </pre></div>
@@ -3068,6 +4414,246 @@ Negative LOF scores: [1.02388584 1.22050401 0.95114439 1.0376618  0.95701983 1.2
 </div>
 </div>
 <p>hasil diatas menunjukkan bahwa data tersebut merupakan data dari iris-setosa, dan juga sesuai dengan hasil dari perhitungan manual yang telah dilakukan sebelumnya</p>
+<p>setelah melakukan pengecekan satu data kita coba untuk membandingkan data yang diprediksi dan data asli</p>
+<ul class="simple">
+<li><p>penskalaan fitur</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Lalu melatih model Klasifikasi Naive Bayes pada Set Pelatihan</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GaussianNB()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">GaussianNB</label><div class="sk-toggleable__content"><pre>GaussianNB()</pre></div></div></div></div></div></div></div>
+</div>
+<ul class="simple">
+<li><p>Confusion matrix dan akurasi</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Accuracy : &quot;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="n">cm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  0.9
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 8,  0,  0],
+       [ 0, 10,  1],
+       [ 0,  2,  9]])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Membandingkan Nilai Riil dengan Nilai Prediksi</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_bayes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Real Values&#39;</span><span class="p">:</span><span class="n">y_test</span><span class="p">,</span> <span class="s1">&#39;Predicted Values&#39;</span><span class="p">:</span><span class="n">y_pred</span><span class="p">})</span>
+<span class="n">df_bayes</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Real Values</th>
+      <th>Predicted Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>122</th>
+      <td>Iris-virginica</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>Iris-virginica</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Iris-setosa</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>Iris-virginica</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>Iris-virginica</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>Iris-virginica</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Iris-versicolor</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Iris-setosa</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Iris-versicolor</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Iris-setosa</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>Iris-virginica</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>Iris-versicolor</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Iris-setosa</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>Iris-virginica</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>Iris-versicolor</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>Iris-versicolor</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Iris-versicolor</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>Iris-versicolor</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>Iris-versicolor</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>Iris-versicolor</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Iris-setosa</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>Iris-virginica</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>Iris-virginica</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Iris-setosa</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>Iris-versicolor</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Iris-setosa</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Iris-versicolor</td>
+      <td>Iris-versicolor</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>Iris-virginica</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Iris-setosa</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>Iris-virginica</td>
+      <td>Iris-virginica</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=fee8661d-3654-474c-b939-c19e7b08cbbd' target="_blank">
 <img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
 Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
@@ -3167,7 +4753,8 @@ Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></s
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-modelling">DATA MODELLING</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-classification">Naive Bayes Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual">Perhitungan Manual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-dengan-mengambil-data-acak">Perhitungan Manual dengan mengambil data acak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-dengan-mengambil-10-data-pertama">perhitungan manual dengan mengambil 10 data pertama</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dengan-code">Dengan code</a></li>
 </ul>
 </li>
